@@ -14,6 +14,25 @@ const iconMap = {
   invoices: InboxIcon,
 };
 
+export async function getStaticProps() {
+  const {
+		numberOfInvoices,
+		numberOfCustomers,
+		totalPaidInvoices,
+		totalPendingInvoices,
+	} = await fetchCardDetails();
+
+  return {
+    props: {
+      numberOfInvoices,
+      numberOfCustomers,
+      totalPaidInvoices,
+      totalPendingInvoices
+    },
+    revalidate: 60
+  }
+}
+
 export default async function CardWrapper() {
   const {
 		numberOfInvoices,

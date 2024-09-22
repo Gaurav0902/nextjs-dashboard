@@ -4,10 +4,8 @@ import LatestInvoices from "@/app/ui/dashboard/latest-invoices";
 import { lusitana } from "@/app/ui/fonts";
 import { Suspense } from "react";
 import { CardSkeleton, LatestInvoicesSkeleton, RevenueChartSkeleton } from "@/app/ui/skeletons";
-import { cookies } from "next/headers";
 
 export default async function Page() {
-  const cookieStore = cookies();
 	return (
 		<main>
 			<h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
